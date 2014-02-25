@@ -1,0 +1,11 @@
+<h1>Edit Playlist</h1>
+
+<h2>Select friends to share with!</h2>
+
+<%= form_for @playlist do |f| %>
+
+  <%= f.label :users %>
+  <%= f.select :users, options_from_collection_for_select(@users, :id, :first_name), {}, { multiple: true } %>
+
+  <%= f.submit "Create" %>
+<% end %>
